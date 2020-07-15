@@ -1,0 +1,94 @@
+<script>
+@charset "UTF-8";
+/*
+* 기초 html 루트 세팅입니다. 각 색상은 루트에서 커서 대시면 확인 가능합니다.
+* 색상 포인트는 베이스 RED 에 보색 GREEN, 각각 light -20% ACCENT 컬러 삽입하였으며,
+* 베이스는 topic 색상으로 light +20% 색상 추가하였습니다.
+*/
+:root{
+    --color-topic: #F02618;
+    --color-accent: #570600;
+    --color-normal: #A30A00;
+    --color-reverse: #00A343;
+    --color-accent-reverse: #005724;
+    --text-white: #FFFFFF;
+}
+/*
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Nanum Myeongjo', serif;
+*/
+/*
+* HTML 폰트 깨짐 방지용 예비 폰트입니다.
+*/
+body{
+    margin: 0;
+    font-family: '맑은 고딕',
+        'Apple SD Gothic Neo',
+        sans-serif;
+}
+body{
+        background-image : url('main.jpg');
+/*그림파일 main.jpg 추가*/
+		background-repeat : no-repeat;
+/*반복안함*/
+		background-size : cover;
+/*배경사이즈 조절*/
+}
+.conA{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: :450px;
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(img/main.jpg);
+    background-position: center;
+    background-size:cover;
+    color: #FFFFFF;
+    color: var(--text-white);
+}
+.conA h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12vw;
+    letter-spacing: 0.1em;
+    margin-left: 0.1em;
+}
+.conA p{
+    margin-top:0;
+    margin-bottom: 0;
+    font-size: 6vw;
+}
+.conA a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    color: #FFFFFF;
+    color: var(--text-bright-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+/*
+* 마우스 올릴경우 반응색 조정!
+*/
+.conA a:hover{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.2)
+        );
+}
+/*
+* 아이패드 화면 너비 768 기준 해당 화면 이하일 경우 글씨 크기 조정을 위하여 설정
+*/
+@media(min-width:768px){
+    .conA h1{
+        font-size: 115px;
+    }
+    .conA p{
+        font-size: 24px;
+    }
+}
+</script>
