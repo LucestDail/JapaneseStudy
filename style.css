@@ -1,4 +1,3 @@
-<script>
 @charset "UTF-8";
 /*
 * 기초 html 루트 세팅입니다. 각 색상은 루트에서 커서 대시면 확인 가능합니다.
@@ -25,29 +24,28 @@ body{
     font-family: '맑은 고딕',
         'Apple SD Gothic Neo',
         sans-serif;
-}
-body{
-        background-image : url('main.jpg');
-/*그림파일 main.jpg 추가*/
-		background-repeat : no-repeat;
-/*반복안함*/
-		background-size : cover;
-/*배경사이즈 조절*/
-}
-.conA{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    min-height: :450px;
-    text-align: center;
-    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(img/main.jpg);
+    background-image : linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(main.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
     background-position: center;
-    background-size:cover;
     color: #FFFFFF;
+    height: 100vh;
+    min-height: 450px;
     color: var(--text-white);
 }
-.conA h2{
+
+/*
+* main html css 설정
+*/
+.class_main{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    min-height: 450px;
+    justify-content: center;
+    text-align: center;
+}
+.class_main h2{
     margin-top: 0;
     margin-bottom: 10px;
     font-family: 'Nanum Gothic', sans-serif;
@@ -55,12 +53,12 @@ body{
     letter-spacing: 0.1em;
     margin-left: 0.1em;
 }
-.conA p{
+.class_main p{
     margin-top:0;
     margin-bottom: 0;
     font-size: 6vw;
 }
-.conA a{
+.class_main a{
     display: inline-block;
     margin-top: 20px;
     padding: 10px 30px;
@@ -74,7 +72,7 @@ body{
 /*
 * 마우스 올릴경우 반응색 조정!
 */
-.conA a:hover{
+.class_main a:hover{
     background-image: linear-gradient(
         rgba(255,255,255,0.2),
         rgba(255,255,255,0.2)
@@ -84,11 +82,176 @@ body{
 * 아이패드 화면 너비 768 기준 해당 화면 이하일 경우 글씨 크기 조정을 위하여 설정
 */
 @media(min-width:768px){
-    .conA h1{
+    .class_main h1{
         font-size: 115px;
     }
-    .conA p{
+    .class_main p{
         font-size: 24px;
     }
 }
-</script>
+/*
+* result html css 설정
+*/
+.class_result{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    min-height: 450px;
+    justify-content: center;
+    text-align: center;
+}
+.class_result h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12vw;
+    letter-spacing: 0.1em;
+    margin-left: 0.1em;
+}
+.class_result p{
+    margin-top:0;
+    margin-bottom: 0;
+    font-size: 6vw;
+}
+.class_result a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    color: #FFFFFF;
+    color: var(--text-bright-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+/*
+* 마우스 올릴경우 반응색 조정!
+*/
+.class_result a:hover{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.2)
+        );
+}
+/*
+* 아이패드 화면 너비 768 기준 해당 화면 이하일 경우 글씨 크기 조정을 위하여 설정
+*/
+@media(min-width:768px){
+    .class_result h1{
+        font-size: 115px;
+    }
+    .class_result p{
+        font-size: 24px;
+    }
+}
+/*
+* game html css 설정
+*/
+.class_game{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    min-height: 450px;
+    justify-content: center;
+    text-align: center;
+}
+.class_game h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12vw;
+    letter-spacing: 0.1em;
+    margin-left: 0.1em;
+}
+.class_game p{
+    margin-top:0;
+    margin-bottom: 0;
+    font-size: 6vw;
+}
+.class_game a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    color: #FFFFFF;
+    color: var(--text-bright-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+/*
+* 마우스 올릴경우 반응색 조정!
+*/
+.class_game a:hover{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.2)
+        );
+}
+/*
+* 아이패드 화면 너비 768 기준 해당 화면 이하일 경우 글씨 크기 조정을 위하여 설정
+*/
+@media(min-width:768px){
+    .class_game h1{
+        font-size: 115px;
+    }
+    .class_game p{
+        font-size: 24px;
+    }
+}
+
+/*
+* game_start html css 설정
+*/
+.class_game_start{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    min-height: 450px;
+    justify-content: center;
+    text-align: center;
+}
+.class_game_start h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12vw;
+    letter-spacing: 0.1em;
+    margin-left: 0.1em;
+}
+.class_game_start p{
+    margin-top:0;
+    margin-bottom: 0;
+    font-size: 6vw;
+}
+.class_game_start a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    color: #FFFFFF;
+    color: var(--text-bright-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+/*
+* 마우스 올릴경우 반응색 조정!
+*/
+.class_game_start a:hover{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.2)
+        );
+}
+/*
+* 아이패드 화면 너비 768 기준 해당 화면 이하일 경우 글씨 크기 조정을 위하여 설정
+*/
+@media(min-width:768px){
+    .class_game_start h1{
+        font-size: 115px;
+    }
+    .class_game_start p{
+        font-size: 24px;
+    }
+}
