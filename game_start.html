@@ -5,11 +5,29 @@
               content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <script>
+            jQuery(function($) {
+                $("body").css("display", "none");
+                $("body").fadeIn(2000);
+                $("a.transition").click(function(event){
+                    event.preventDefault();
+                    linkLocation = this.href;
+                    $("body").fadeOut(1000, redirectPage);
+                });
+                function redirectPage() {
+                    window.location = linkLocation;
+                }
+            });
+        </script>
         <title> 일본어 게임 </title>
     </head>
     <body>
-        <section class = "class_game">
+        <section class = "class_game_start">
         <div class="container">
+            <div id="timer">
+                <h1>00:00:00</h1>
+            </div>
+            <script src="timer.js"></script>
             <script src="game.js"></script>
         </div>
     </section>

@@ -5,12 +5,26 @@
               content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <script>
+            jQuery(function($) {
+                $("body").css("display", "none");
+                $("body").fadeIn(2000);
+                $("a.transition").click(function(event){
+                    event.preventDefault();
+                    linkLocation = this.href;
+                    $("body").fadeOut(1000, redirectPage);
+                });
+                function redirectPage() {
+                    window.location = linkLocation;
+                }
+            });
+        </script>
         <title> 일본어 게임 </title>
     </head>
     <body>
         <section class = "class_game">
         <div class="container">
-            <h2>카드 규칙 설명</h2>
+            <h2>게임 규칙 설명</h2>
             <p> 일본어 문자와 영어 발음이 같은 것을 고르세요!</p>
             <a href="result.html"> 준비 완료 </a>
         </div>

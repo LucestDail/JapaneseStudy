@@ -32,6 +32,50 @@ body{
     height: 100vh;
     min-height: 450px;
     color: var(--text-white);
+    animation: fadein 2000ms ease-out;
+    
+    /*
+    * 화면 전화간 부드럽게 전환하도록 효과 추가
+    */
+    -moz-animation: fadein 2000ms ease-out; /* Firefox */
+    -webkit-animation: fadein 2000ms ease-out; /* Safari and  Chrome */
+    -o-animation: fadein 2000ms ease-out; /* Opera */
+}
+/*
+*각 브라우저별 설정
+*/
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /*
@@ -159,14 +203,14 @@ body{
     margin-top: 0;
     margin-bottom: 10px;
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: 12vw;
+    font-size: 10vw;
     letter-spacing: 0.1em;
     margin-left: 0.1em;
 }
 .class_game p{
     margin-top:0;
     margin-bottom: 0;
-    font-size: 6vw;
+    font-size: 8vw;
 }
 .class_game a{
     display: inline-block;
@@ -188,6 +232,18 @@ body{
         rgba(255,255,255,0.2)
         );
 }
+/*
+* 아이패드 화면 너비 768 기준 해당 화면 이하일 경우 글씨 크기 조정을 위하여 설정
+*/
+@media(min-width:768px){
+    .class_game h1{
+        font-size: 115px;
+    }
+    .class_game p{
+        font-size: 24px;
+    }
+}
+
 /*
 * 아이패드 화면 너비 768 기준 해당 화면 이하일 경우 글씨 크기 조정을 위하여 설정
 */
