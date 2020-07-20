@@ -113,7 +113,7 @@ class japanCardGame{
     
     getCardType(card){
         console.dir(card.getElementsByClassName('card-value')[0])
-        return card.getElementsByClassName('card-value')[0];
+        return card.getElementsByClassName('card-value')[0].id;
         
     }
     
