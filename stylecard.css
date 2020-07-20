@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+
+/*
+폰트 세팅입니다.
+폰트 : 나눔 고딕 코딩, 나눔명조
+출처 : https://fonts.google.com/
+*/
+@font-face{
+    font-family: "NanumGothicCoding";
+    src: url("assets/fonts/NanumGothicCoding-Regular.ttf") format("ttf")
+}
+@font-face{
+    font-family: "NanumMyeongjo";
+    src: url("NanumMyeongjo-Regular.ttf") format("ttf")
+}
+
+/*
+외관 세팅입니다.
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+    min-height:100vh;
+    font-family: NanumMyeongjo;
+}
+
+body{
+    margin: 0;
+    background-image : linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(img/main.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position: center;
+    color: #FFFFFF;
+    animation: fadein 2s linear;
+}
+
+.page-title {
+  color: #FFFFFF;
+  font-family: NanumMyeongjo, serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.game-info-container{
+    grid-column: 1/ -1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info{
+    color: #FFFFFF;
+    font-size: 3em;
+}
+
+.game-container{
+    margin: 50px auto;
+    display:grid;
+    grid-template-columns: repeat(4,auto); 
+    grid-gap: 10px;
+    justify-content: center;
+    perspective: 500px;
+}
+
+/*
+오버레이 세팅입니다.
+*/
+
+.overlay-text{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: NanumMyeongjo,serif;
+    transition: background-color 500ms, font-size 500ms;
+}
+
+.overlay-text-small{
+    font-size: .3em;
+}
+
+.overlay-text.visible{
+    display: flex;
+    animation: overlay-grow 1000ms forwards;
+}
+
+@keyframes overlay-grow{
+    from{
+        background-color: rgba(0,0,0,0);
+        font-size: 0;
+    }
+    to{
+        background-color: rgba(0,0,0,0.8);
+        font-size: 10em;
+    }
+}
+
+
+
+/*
+카드 이미지 세팅입니다.
+*/
+.card{
+    height: 150px;
+    width: 100px;
+    position: relative;
+}
+
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    border-width: 1px;
+    border: solid 1px;
+    transition: transform 500ms ease-in-out;
+}
+
+.japan-icon{
+    width: 100px;
+    height: 150px;
+}
+
+.card.visible
+.card-front{
+    transform: rotateY(-180deg);
+}
+
+.card.visible
+.card-back{
+    transform: rotateY(0);
+}
+
+.card.matched
+.card-back
+.card-value {
+    animation: fadeOut 1s ease 0s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity:.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.card-back{
+    background-color: black;
+    border-color: white;
+    transform: rotateY(180deg);
+}
+
+.card-front{
+    background: white;
+    border: black;
+    transform: rotateY(0);
+}
+
+
+@media (max-width: 600px) {
+  .game-container {
+    grid-template-columns: repeat(2, auto)
+  }
+
+  .game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

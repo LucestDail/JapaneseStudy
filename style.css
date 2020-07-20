@@ -5,11 +5,6 @@
 * 베이스는 topic 색상으로 light +20% 색상 추가하였습니다.
 */
 :root{
-    --color-topic: #F02618;
-    --color-accent: #570600;
-    --color-normal: #A30A00;
-    --color-reverse: #00A343;
-    --color-accent-reverse: #005724;
     --text-white: #FFFFFF;
 }
 /*
@@ -24,15 +19,16 @@ body{
     font-family: '맑은 고딕',
         'Apple SD Gothic Neo',
         sans-serif;
-    background-image : linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(main.jpg);
+    background-image : linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(#main.jpg);
     background-repeat : no-repeat;
     background-size : cover;
     background-position: center;
+    z-index: -1;
     color: #FFFFFF;
     height: 100vh;
     min-height: 450px;
     color: var(--text-white);
-    animation: fadein 2000ms ease-out;
+    animation: fadein 2s linear;
     
     /*
     * 화면 전화간 부드럽게 전환하도록 효과 추가
@@ -310,4 +306,40 @@ body{
     .class_game_start p{
         font-size: 24px;
     }
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.card{
+    width: 100px;
+    height: 150px;
+    border: 1px solid black;
+}
+.card-inner{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-flipped .card-inner{
+    transform: rotateY(180deg);
+}
+
+.card-front .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
 }
