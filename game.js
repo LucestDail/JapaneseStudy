@@ -1,7 +1,7 @@
 class AudioController{
     constructor() {
         this.bgMusic = new Audio('assets/Audio/bgmusic.wav');
-        this.flipSound = new Audio('assets/Audio/flip.wav');
+        this.clickSound = new Audio('assets/Audio/click.wav');
         this.matchSound = new Audio('assets/Audio/match.wav');
         this.victorySound = new Audio('assets/Audio/victory.wav');
         this.gameOverSound = new Audio('assets/Audio/gameOver.wav');
@@ -15,8 +15,8 @@ class AudioController{
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
     }
-    flip() {
-        this.flipSound.play();
+    click() {
+        this.clickSound.play();
     }
     match() {
         this.matchSound.play();
@@ -37,7 +37,7 @@ class japanCardGame{
         this.totalTime = totalTime;
         this.timeRemaining = totalTime;
         this.timer = document.getElementById('time-remaining')
-        this.ticker = document.getElementById('flips');
+        this.ticker = document.getElementById('clicks');
         this.audioController = new AudioController();
     }
     startGame() {
@@ -65,9 +65,9 @@ class japanCardGame{
         });
     }
     
-    flipCard(card) {
-        if(this.canFlipCard(card)) {
-            this.audioController.flip();
+    clickCard(card) {
+        if(this.canClickCard(card)) {
+            this.audioController.click();
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
             card.classList.add('visible');
@@ -146,7 +146,7 @@ class japanCardGame{
         }
     }
     
-    canFlipCard(card){
+    canClickCard(card){
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
     }
 }
@@ -173,7 +173,7 @@ function ready() {
     });
     cards.forEach(card =>{
         card.addEventListener('click',()=>{
-            game.flipCard(card);
+            game.clickCard(card);
         });
     });
 }

@@ -127,10 +127,11 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    backface-visibility: hidden;
     border-radius: 12px;
     border-width: 1px;
     border: solid 1px;
+    background: white;
+    border: solid 3px black;
     transition: transform 500ms ease-in-out;
 }
 
@@ -140,44 +141,24 @@ body{
 }
 
 .card.visible
-.card-front{
-    transform: rotateY(-180deg);
-}
-
-.card.visible
-.card-back{
-    transform: rotateY(0);
+.card-name{
+    animation: fadeOut 1s infinite 1s;
 }
 
 .card.matched
-.card-back
-.card-value {
+.card-name {
     animation: fadeOut 1s ease 0s 1;
     animation-fill-mode: forwards;
 }
+
 
 @keyframes fadeOut{
     0%{
         opacity: 1;
     }
-    50%{
-        opacity:.5;
-    }
     100%{
         opacity: 0;
     }
-}
-
-.card-back{
-    background-color: black;
-    border-color: white;
-    transform: rotateY(180deg);
-}
-
-.card-front{
-    background: white;
-    border: black;
-    transform: rotateY(0);
 }
 
 
