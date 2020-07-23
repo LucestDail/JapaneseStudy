@@ -11,28 +11,33 @@ const urlHiragana = "./doc/Hiragana.csv";
 const urlKatagana = "./doc/Katagana.csv";
 let csvObjectHiragana = [];
 let csvObjectKatagana = [];
+var buffer = [];
 
 function printarray(tararray){
     for(var i=0;i<tararray.length;i++){
         console.log(tararray[i])
     }
 }
+const results = [];
+fs.createReadStream(urlHiragana)
+    .pipe(csv())
+    .on('data', (data) => results.push(data))
+    .on('end', () => {
+    console.log(results);
+});
 
-function readCsv(csvUrl){
-    const results = [];
-    fs.createReadStream(csvUrl)
-        .pipe(csv())
-        .on('data', (data) => results.push(data))
-        .on('end', () => {
-        console.log(results);
-    });
-    //console.log(results);
-    return results;
+console.log(results);
+
+function bufferoset(buffer){
+    
+    
+    
 }
-
+/*
 function init(){
-    csvObjectHiragana = readCsv(urlHiragana);
-    csvObjectKatagana = readCsv(urlKatagana);
+    console.log(results);
+    //csvObjectHiragana = readCsv(urlHiragana);
+    //csvObjectKatagana = readCsv(urlKatagana);
     //console.log(csvObjectHiragana);
     //console.log(csvObjectKatagana);
     //var csvArrayHiragana = comma_separated_values.toArray(csvObjectHiragana);
@@ -42,7 +47,7 @@ function init(){
 }
 
 init();
-
+*/
 //const csvHiragana = new CSV(dataHiragana, {header: true}).parse();
 //const csvKatagana = new CSV(dataKatagana, {header: true}).parse();
 //console.dir(csvHiragana);
