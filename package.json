@@ -9,7 +9,7 @@
     "comma-separated-values": "^3.6.4",
     "csv": "^5.3.2",
     "csv-parser": "^2.3.3",
-    "d3": "^5.16.0",
+    "d3": "^7.6.1",
     "d3-fetch": "^1.2.0",
     "jquery-csv": "^1.0.11"
   },
